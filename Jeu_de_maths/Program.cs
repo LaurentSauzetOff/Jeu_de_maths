@@ -5,14 +5,15 @@
         static void PoserQuestion()
         {
             int reponseInt = 0;
-            while (reponseInt == 0)
+            while (true)
             {
                 Console.Write("5 + 2 = ");
                 string reponse = Console.ReadLine();
 
                 try
                 {
-                    reponseInt = int.Parse(reponse)
+                    reponseInt = int.Parse(reponse);
+                    break;
                 }
                 catch
                 {
