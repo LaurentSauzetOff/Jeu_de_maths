@@ -6,7 +6,7 @@
         {
             ADDITION = 1,
             MULTIPLICATION = 2,
-            SOUSTRACTION = 3,
+            SOUSTRACTION = 3
         }
         static bool PoserQuestion(int min, int max)
         {
@@ -22,28 +22,28 @@
                 // 1 -> addition
                 // 2 -> multiplication
 
-                if (o == e_Operateur.ADDITION)
+                switch (o)
                 {
-                    Console.Write(a + " + " + b + " = ");
-                    resultatAttendu = a + b;
-                }
-                else if (o == e_Operateur.MULTIPLICATION)
-                {
-                    Console.Write(a + " x " + b + " = ");
-                    resultatAttendu = a * b;
-                }
-                else if (o == e_Operateur.SOUSTRACTION)
-                {
-                    Console.Write(a + " - " + b + " = ");
-                    resultatAttendu = a - b;
-                }
-                else
-                {
-                    Console.Write("Cas inconnu");
-                    return false;
+                    case e_Operateur.ADDITION:
+                        Console.Write(a + " + " + b + " = ");
+                        resultatAttendu = a + b;
+                        break;
+
+                    case e_Operateur.MULTIPLICATION:
+                        Console.Write(a + " x " + b + " = ");
+                        resultatAttendu = a * b;
+                        break;
+
+                    case e_Operateur.SOUSTRACTION:
+                        Console.Write(a + " - " + b + " = ");
+                        resultatAttendu = a - b;
+                        break;
+                    default:
+                        Console.Write("Cas inconnu");
+                        return false;
                 }
 
-                Console.Write(a + " + " + b + " = ");
+
                 string reponse = Console.ReadLine();
                 try
                 {
@@ -73,7 +73,7 @@
 
             for (int i = 0; i < NOMBRE_QUESTIONS; i++)
             {
-                Console.WriteLine("Question N° " + (i + 1) + NOMBRE_QUESTIONS);
+                Console.WriteLine("Question N° " + (i + 1) + "/" + NOMBRE_QUESTIONS);
 
                 bool bonneReponse = PoserQuestion(NOMBRE_MIN, NOMBRE_MAX);
                 if (bonneReponse)
