@@ -2,6 +2,12 @@
 {
     class Program
     {
+        enum e_Operateur
+        {
+            ADDITION = 1,
+            MULTIPLICATION = 2,
+            SOUSTRACTION = 3,
+        }
         static bool PoserQuestion(int min, int max)
         {
             Random rand = new Random();
@@ -10,21 +16,31 @@
             {
                 int a = rand.Next(min, max + 1);
                 int b = rand.Next(min, max + 1);
-                int o = rand.Next(1, 3);
+                e_Operateur o = (e_Operateur)rand.Next(1, 4);
                 int resultatAttendu;
                 // o => 1 ou 2
                 // 1 -> addition
                 // 2 -> multiplication
 
-                if (o == 1)
+                if (o == e_Operateur.ADDITION)
                 {
                     Console.Write(a + " + " + b + " = ");
                     resultatAttendu = a + b;
                 }
-                else
+                else if (o == e_Operateur.MULTIPLICATION)
                 {
                     Console.Write(a + " x " + b + " = ");
                     resultatAttendu = a * b;
+                }
+                else if (o == e_Operateur.SOUSTRACTION)
+                {
+                    Console.Write(a + " - " + b + " = ");
+                    resultatAttendu = a - b;
+                }
+                else
+                {
+                    Console.Write("Cas inconnu");
+                    return false;
                 }
 
                 Console.Write(a + " + " + b + " = ");
