@@ -10,13 +10,29 @@
             {
                 int a = rand.Next(min, max + 1);
                 int b = rand.Next(min, max + 1);
+                int o = rand.Next(1, 3);
+                int resultatAttendu;
+                // o => 1 ou 2
+                // 1 -> addition
+                // 2 -> multiplication
+
+                if (o == 1)
+                {
+                    Console.Write(a + " + " + b + " = ");
+                    resultatAttendu = a + b;
+                }
+                else
+                {
+                    Console.Write(a + " x " + b + " = ");
+                    resultatAttendu = a * b;
+                }
 
                 Console.Write(a + " + " + b + " = ");
                 string reponse = Console.ReadLine();
                 try
                 {
                     reponseInt = int.Parse(reponse);
-                    if (reponseInt == a + b)
+                    if (reponseInt == resultatAttendu)
                     {
                         return true;
                     }
