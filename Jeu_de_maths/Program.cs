@@ -35,7 +35,7 @@
         {
             const int NOMBRE_MIN = 1;
             const int NOMBRE_MAX = 10;
-            const int NOMBRE_QUESTIONS = 3;
+            const int NOMBRE_QUESTIONS = 5;
 
             int points = 0;
 
