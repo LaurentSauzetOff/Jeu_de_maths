@@ -42,7 +42,7 @@
             for (int i = 0; i < NOMBRE_QUESTIONS; i++)
             {
                 Console.WriteLine("Question N° " + (i + 1) + NOMBRE_QUESTIONS);
-                Console.Write();
+
                 bool bonneReponse = PoserQuestion(NOMBRE_MIN, NOMBRE_MAX);
                 if (bonneReponse)
                 {
@@ -56,6 +56,33 @@
                 Console.WriteLine();
             }
             Console.WriteLine("Nombre de points : " + points + "/" + NOMBRE_QUESTIONS);
+
+            // 100% bonnes réponses = Excellent
+            // 0 => Révisez vos maths
+
+            // 10 => 5 ( 10/2 = 5)
+            // 5/2 = 2,5 => 2
+            int moyenne = NOMBRE_QUESTIONS / 2;
+
+            //> moyenne = pas mal
+            // <=moyenne => Peux mieux faire
+
+            if (points == NOMBRE_QUESTIONS)
+            {
+                Console.WriteLine("Excellent");
+            }
+            else if (points == 0)
+            {
+                Console.WriteLine("Révisez vos maths !");
+            }
+            else if (points > moyenne)
+            {
+                Console.WriteLine("Pas mal");
+            }
+            else
+            {
+                Console.WriteLine("Peux mieux faire");
+            }
         }
     }
 }
