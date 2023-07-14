@@ -37,6 +37,8 @@
             const int NOMBRE_MAX = 10;
             const int NOMBRE_QUESTIONS = 3;
 
+            int points = 0;
+
             for (int i = 0; i < NOMBRE_QUESTIONS; i++)
             {
                 Console.WriteLine("Question N° " + (i + 1) + NOMBRE_QUESTIONS);
@@ -45,12 +47,15 @@
                 if (bonneReponse)
                 {
                     Console.WriteLine("Bonne réponse !");
+                    points++;
                 }
                 else
                 {
                     Console.WriteLine("Mauvaise réponse:");
                 }
+                Console.WriteLine();
             }
+            Console.WriteLine("Nombre de points : " + points + "/" + NOMBRE_QUESTIONS);
         }
     }
 }
